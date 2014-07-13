@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Test2 Detail click Demo</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<script type="text/javascript" src="js/jquery/jquery-2.1.1.min.js"></script>
+	
+	<style type="text/css">
+		#contentWrap { position: relative; }
+		#contentWrap div { position: absolute; left:0; top:0; }
+	</style>
+	
+	<script type="text/javascript">
+		$(function() {
+		    $('#contentWrap div').hide();
+		    $('#contentWrap div:first').show();
+		    $('#thumbs a:first').addClass('active');
+		
+		    $('#thumbs a').click(function() {
+		        if ($(this).hasClass('active') == true) {
+		            return false;
+		        }
+		        else {
+		            $('a.active').removeClass('active');
+		            $(this).addClass('active');
+		
+/*		            $('#contentWrap div').fadeOut("slow");*/
+		            $('#contentWrap div').fadeOut();
+		            var contentToLoad = $(this).attr('href');
+/*		            $(contentToLoad).fadeIn("fast");*/
+		            $(contentToLoad).fadeIn();
+		
+		            return false;
+		        }
+		    });
+		});
+	</script>
+</head>
+	<body>
+	<div id="mainContent">
+	   <div id="thumbs">
+	       <a href="#content1">Content1</a>
+	       <a href="#content2">Content2</a>
+	       <a href="#content3">Content3</a>
+	   </div>
+	
+	   <div id="contentWrap">
+	      <div id="content1">
+	          <p>Content 1</p>
+	      </div>
+	      <div id="content2">
+	          <p>This is Content 2</p>
+	      </div>
+	      <div id="content3">
+	          <p>Content 3 is what this is</p>
+	      </div>
+	  </div>
+	</div>
+	</body>
+</html>

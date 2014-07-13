@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>SEO Detail click Demo</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<style type="text/css">
+		* {	
+			background-color:white; 
+		}
+		#triggers {
+			float:left;
+			border:1px solid #ccc;
+		}
+		#triggers div {
+			cursor:pointer;
+		}
+		#zero {
+			display:none;
+			color:red;
+		}
+		#first {
+			color:blue;
+		}
+		#second {
+			color:green;
+		}
+		#third {
+			color:#a52a2a;
+		}
+		#fourth {
+			color:#bdbdbd;
+		}
+	</style>
+	<script type="text/javascript">
+		if(document.getElementById)
+			document.write('<style type="text/css">.detail {float:left;display:none;}#zero {display:block;}<\/style>');
+			function reveal(det){
+			if(!document.getElementById) return;
+			if (!document.getElementsByClassName){
+			document.getElementsByClassName = function(cn){
+			cn = cn.replace(/ +/g, ' ').split(' ');
+			var ar = [], testname = function(n){
+			for (var re, i = cn.length - 1; i > -1; --i){
+				re = new RegExp('(^|\W)' + cn[i] + '(\W|$)');
+				if(!re.test(n)) return false;
+			}
+			return true;
+		}
+		
+		for(var d = document.all || document.getElementsByTagName('*'), i = 0; i < d.length; ++i)
+			if(testname(d[i].className))
+				ar[ar.length] = d[i];
+				return ar;
+			};
+			document.getElementsByClassName.spoof = true;
+		}
+		
+		for (var d = document.getElementsByClassName('detail'), i = d.length - 1; i > -1; --i)
+		d[i].style.display = 'none';
+		document.getElementById(det).style.display = 'block';
+		
+		if (document.getElementsByClassName.spoof)
+			document.getElementsByClassName.spoof = document.getElementsByClassName = null;
+		}
+	</script>
+</head>
+	<body>
+		<div id="triggers">
+			<div onclick="reveal('first');">
+				1st Trigger
+			</div>
+			<div onclick="reveal('second');">
+				2nd Trigger
+			</div>
+			<div onclick="reveal('third');">
+				3rd Trigger
+			</div>
+			<div onclick="reveal('fourth');">
+				4th Trigger
+			</div>
+		</div>
+		<div class="detail" id="zero">
+			This would be what people would see at page load.
+		</div>
+		<div class="detail" id="first">
+			This would be what people would see for the first clicked content.
+		</div>
+		<div class="detail" id="second">
+			This would be what people would see for the second clicked content.
+		</div>
+		<div class="detail" id="third">
+			This would be what people would see for the third clicked content.
+		</div>
+		<div class="detail" id="fourth">
+			This would be what people would see for the fourth clicked content.
+		</div>
+	</body>
+</html>

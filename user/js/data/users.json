@@ -1,0 +1,37 @@
+[
+    {
+        "_id": "53a668a14a2f58451610f0a1",
+        "password": "password12345",
+        "email": "danahall@hall.org",
+        "fullname": "Dana J. Hall",
+        "__v": 0
+    },
+    {
+        "_id": "53a668d44a2f58451610f0a2",
+        "password": "quilterlady123",
+        "email": "theresahall@hall.org",
+        "fullname": "Theresa M. Hall",
+        "__v": 0
+    },
+    {
+        "_id": "53a79e53aae5ae4a04aadbe9",
+        "password": "bozo987",
+        "email": "bozo@hall.org",
+        "fullname": "Bozo",
+        "__v": 0
+    },
+    {
+        "_id": "53aa0998c3db6890077a2486",
+        "password": "edwinA5432",
+        "email": "edwin@anderson.com",
+        "fullname": "Edwin Anderson",
+        "__v": 0
+    },
+    {
+        "_id": "53adf6921402455d080363d0",
+        "password": "john$01",
+        "email": "john@beatles.com",
+        "fullname": "John Lennon",
+        "__v": 0
+    }
+]
