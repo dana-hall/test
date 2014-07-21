@@ -1,0 +1,35 @@
+<div>
+    <label>Name: </label><input type="text" ng-model="newUser.fullname" ><br/>
+    <label>Email: </label><input type="text" ng-model="newUser.email" ><br/>
+    <label>Password: </label><input type="text" ng-model="newUser.password" ><br/>
+    <label>Id: </label><input type="text" ng-model="newUser.id" ><br/>
+    
+    <button ng-click="getUsers()">Read All Users</button><br>
+    <button ng-click="getUser(newUser.id)">Read User</button><br>
+    <button ng-click="addUser(newUser.fullname, newUser.email, newUser.password)">Add User</button><br>
+    <button ng-click="updateUser(newUser.fullname, newUser.email, newUser.password, newUser.id)">Update User</button><br>
+    <button ng-click="deleteUser(newUser.id)">Delete User</button><br>
+    <hr>
+	
+<style type="text/css">
+	.tftable {font-size:12px;color:#333333;width:80%;border-width: 1px;border-color: #729ea5;border-collapse: collapse;}
+	.tftable th {font-size:12px;background-color:#acc8cc;border-width: 1px;padding: 8px;border-style: solid;
+	             border-color: #729ea5;text-align:left;}
+	.tftable tr {background-color:#ffffff;}
+	.tftable td {font-size:12px;border-width: 1px;padding: 8px;border-style: solid;border-color: #729ea5;}
+	.tftable tr:hover {background-color:#ffff99;}
+</style>
+
+<table class="tftable" border="1">
+	<tr>
+		<th>Id</th><th>Fullname</th><th>Email</th><th>Password</th>
+	</tr>
+   <tr ng-repeat="user in users">
+        <td>{{user._id}}</td> 
+        <td>{{user.fullname}} </td>
+        <td>{{user.email}} </td>
+        <td>{{user.password}} </td>
+    </tr>
+</table>
+
+</div>
